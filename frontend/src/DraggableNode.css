@@ -1,0 +1,179 @@
+.draggable-node {
+  width: 100%;
+  padding: 12px;
+  cursor: grab;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  /* user-select: none; */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.draggable-node::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.draggable-node:hover::before {
+  transform: translateX(100%);
+}
+
+.draggable-node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.draggable-node:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+.node-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.node-icon-container {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.draggable-node:hover .node-icon-container {
+  transform: scale(1.1);
+}
+
+.node-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.node-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.node-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.node-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 500;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 4px;
+}
+
+/* Node type specific styles */
+.node-input {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.node-output {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.node-llm {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.05));
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.node-transform {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.05));
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.node-api {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(6, 182, 212, 0.05));
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.node-database {
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(20, 184, 166, 0.05));
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+/* Icon backgrounds */
+.node-input .node-icon-container {
+  background: rgba(16, 185, 129, 0.2);
+}
+
+.node-output .node-icon-container {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.node-llm .node-icon-container {
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.node-transform .node-icon-container {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+.node-api .node-icon-container {
+  background: rgba(6, 182, 212, 0.2);
+}
+
+.node-database .node-icon-container {
+  background: rgba(20, 184, 166, 0.2);
+}
+
+/* Badge colors */
+.node-input .node-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: rgb(16, 185, 129);
+}
+
+.node-output .node-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: rgb(239, 68, 68);
+}
+
+.node-llm .node-badge {
+  background: rgba(139, 92, 246, 0.2);
+  color: rgb(139, 92, 246);
+}
+
+.node-transform .node-badge {
+  background: rgba(245, 158, 11, 0.2);
+  color: rgb(245, 158, 11);
+}
+
+.node-api .node-badge {
+  background: rgba(6, 182, 212, 0.2);
+  color: rgb(6, 182, 212);
+}
+
+.node-database .node-badge {
+  background: rgba(20, 184, 166, 0.2);
+  color: rgb(20, 184, 166);
+} 

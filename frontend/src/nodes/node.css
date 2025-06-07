@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .react-flow__node {
+    @apply rounded-lg p-4 bg-dark-node/95 border border-dark-border/50 text-gray-200 transition-all duration-200 backdrop-blur-sm min-w-[180px] shadow-lg;
+  }
+
+  .react-flow__node:hover {
+    @apply -translate-y-0.5 shadow-xl border-dark-border-hover/60 bg-dark-hover/90;
+  }
+
+  .react-flow__node.selected {
+    @apply shadow-[0_0_0_2px] shadow-primary-500/40 bg-dark-hover/80;
+  }
+
+  .react-flow__handle {
+    @apply w-2 h-2 bg-dark-border/50 border-2 border-dark-border/60 transition-all duration-200;
+  }
+
+  .react-flow__handle:hover {
+    @apply bg-primary-500/40 border-primary-500/60 scale-110;
+  }
+
+  .react-flow__edge {
+    @apply stroke-dark-border/50 stroke-[1.5] transition-all duration-200;
+  }
+
+  .react-flow__edge.selected {
+    @apply stroke-primary-500/60 stroke-[2];
+  }
+
+  .react-flow__minimap {
+    @apply bg-dark-node/95 backdrop-blur rounded-lg border border-dark-border/50 overflow-hidden;
+  }
+
+  /* Node type specific styles */
+  .react-flow__node-input {
+    @apply bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-emerald-500/30;
+  }
+
+  .react-flow__node-output {
+    @apply bg-gradient-to-br from-rose-500/20 to-rose-500/5 border-rose-500/30;
+  }
+
+  .react-flow__node-llm {
+    @apply bg-gradient-to-br from-violet-500/20 to-violet-500/5 border-violet-500/30;
+  }
+
+  .react-flow__node-transform {
+    @apply bg-gradient-to-br from-amber-500/20 to-amber-500/5 border-amber-500/30;
+  }
+
+  .react-flow__node-api {
+    @apply bg-gradient-to-br from-sky-500/20 to-sky-500/5 border-sky-500/30;
+  }
+
+  .react-flow__node-database {
+    @apply bg-gradient-to-br from-teal-500/20 to-teal-500/5 border-teal-500/30;
+  }
+} 
